@@ -8,26 +8,18 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
   LcboBackboneApp.Views.Products = Backbone.View.extend({
 
     template: JST['app/scripts/templates/products.ejs'],
+
     events: {},
+
     initialize: function () {
-      var _this = this;
-      _.bindAll(this, 'render');
-
       this.collection = new LcboBackboneApp.Collections.Products();
-
-      this.collection.fetch({
-        success: function (data, response) {
-          _this.render(response);
-        },
-
-        error: function(error) {
-          console.log('error : ', error);
-        }
-      });
+      this.collection.fetch();
+      this.listenTo(this.collection, 'sync', this.render);
     },
 
-    render: function (response) {
-      this.$el.html(this.template({products: response}));
+    render: function (data, products) {
+      console.log('products : ', products);
+      this.$el.html(this.template({products: products}));
     }
   });
 })();

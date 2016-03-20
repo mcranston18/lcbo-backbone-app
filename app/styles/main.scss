@@ -1,70 +1,14 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+$font-color-main: #222;
+$font-color-light: #666;
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-
-.marketing p + h4 {
-  margin-top: 28px;
+html, body {
+  font-size: 16px;
+  font-family: MillerDisplay, Georgia, 'Times New Roman' !important;
+  color: $font-color-main;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -72,20 +16,56 @@ body {
   .container {
     max-width: 730px;
   }
+}
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+.lcbo-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+  img {
+    width: 170px;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+}
+
+.product-list {
+  padding: 0;
+
+  a {
+    color: #333;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+    }
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+
+  .product-list-item {
+    list-style-type: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+
+    .product-thumbnail {
+      height: 80px;
+    }
+
+    .title a {
+      color: #333;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .meta-info {
+      font-size: 0.7rem;
+      color: $font-color-light;
+    }
+
+    .bottom-row {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+
+      em {
+        font-style: italic;
+      }
+    }
   }
 }

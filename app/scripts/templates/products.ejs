@@ -1,11 +1,49 @@
-<ol class="breadcrumb">
-  <li><a href="#/products">Products</a></li>
-</ol>
+<% _.each(products.result, function (product) { %>
+  <ul class="product-list">
+      <li class="product-list-item">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="#/products/<%= product.id %>">
+             <img class="product-thumbnail" src="<%= product.image_thumb_url %>" />
+            </a>
+          </div>
 
-  <% _.each(products.result, function (product) { %>
-  <ul class="product">
-      <li>
-        <a href="#/products/<%= product.id %>"><%= product.name %></a>
+          <div class="col-md-10">
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="title">
+                  <a href="#/products/<%= product.id %>"><%= product.name %></a>
+                </div>
+                <div class="meta-info">
+                  <span>LCBO #<%= product.id %> | </span>
+                  <span><%= product.package %></span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="price">
+                  $<%= product.price_in_cents %>
+                </div>
+              </div>
+            </div>
+
+          <div class="row bottom-row">
+            <div class="col-md-8">
+              <div class="bottom">
+                <em><%= product.origin %></em>
+                <span><%= product.producer_name %></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bottom">
+                <a href="#/products/<%= product.id %>">View more details</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </li>
   </ul>
   <% }); %>
+
+
