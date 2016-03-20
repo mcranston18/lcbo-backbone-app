@@ -14,13 +14,10 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       _.bindAll(this, 'render');
       var _this = this;
 
-      console.log('routeParams : ', routeParams);
-      this.model = new LcboBackboneApp.Models.Product({id: routeParams.id});
+      this.collection = new LcboBackboneApp.Collections.Products({stupid: routeParams.id});
 
-      this.model.fetch({
+      this.collection.fetch({
         success: function (data, response) {
-          console.log('data : ', data);
-          console.log('response : ', response);
           _this.render(response);
         },
 
@@ -28,12 +25,9 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
           console.log('error : ', error);
         }
       });
-
-      // this.listenTo(this.model, 'change', this.render);
     },
 
     render: function (routeParams) {
-      // console.log('routeParams : ', routeParams);
       this.$el.html(this.template(routeParams));
     }
   });

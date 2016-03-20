@@ -7,9 +7,7 @@ LcboBackboneApp.Models = LcboBackboneApp.Models || {};
   var url = 'https://lcboapi.com/products';
 
   LcboBackboneApp.Models.Product = Backbone.Model.extend({
-    url: url,
-    initialize: function() {},
-    defaults: {}
+
   });
 
 })();
