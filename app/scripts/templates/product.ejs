@@ -1,12 +1,30 @@
-<ol class="breadcrumb">
-  <li><a href="#/products">Products</a></li>
-  <li><span><%= product.name %></span></li>
-</ol>
+<a href="#/products">Go back to products</a>
 
-<% _.each(product, function (value, key) { %>
-<ul class="product">
-    <li>
-      <%= key %>: <%= value %>
-    </li>
-</ul>
-<% }); %>
+<div class="row product">
+  <div class="col-md-4">
+     <img class="product-image" src="<%= product.image_url %>" />
+  </div>
+  <div class="col-md-8">
+    <h1 class="title big">
+      <%= product.name %>
+    </h1>
+    <div class="meta-info">
+      <span>LCBO #<%= product.id %> | </span>
+      <span><%= product.package %></span>
+    </div>
+
+    <hr />
+    <div class="style">
+      Style: <%= product.style %>
+    </div>
+    <hr />
+
+    <p class="tasting-notes"><%= product.tasting_note %></p>
+
+    <hr />
+
+    <div class="price">
+      <strong>$<%= (product.price_in_cents/100).toFixed(2) %></strong>
+    </div>
+  </div>
+</div>

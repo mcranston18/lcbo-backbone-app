@@ -3,12 +3,28 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 $font-color-main: #222;
 $font-color-light: #666;
+$font-xbig: 22px;
+$font-big: 18px;
+$font-regular: 16px;
+$font-small: 14px;
+$font-xsmall: 12px;
 
 
 html, body {
   font-size: 16px;
   font-family: MillerDisplay, Georgia, 'Times New Roman' !important;
   color: $font-color-main;
+}
+
+a {
+  color: #333;
+  border-bottom: 1px solid #eee;
+  font-size: $font-small;
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -28,44 +44,49 @@ html, body {
 
 .product-list {
   padding: 0;
+}
 
-  a {
-    color: #333;
-    border-bottom: 1px solid #eee;
+.product {
+  list-style-type: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
 
-    &:hover {
-      text-decoration: none;
-      border-bottom: 1px solid #ddd;
-    }
+  .product-thumbnail {
+    height: 80px;
   }
 
-  .product-list-item {
-    list-style-type: none;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #ddd;
+  .product-image {
+    height: 250px;
+  }
 
-    .product-thumbnail {
-      height: 80px;
-    }
-
-    .title a {
+  .title {
+    margin-top: 0;
+    a {
       color: #333;
       font-size: 0.85rem;
       font-weight: bold;
     }
 
-    .meta-info {
-      font-size: 0.7rem;
-      color: $font-color-light;
+    &.big {
+      font-size: $font-xbig;
     }
+  }
 
-    .bottom-row {
-      margin-top: 1rem;
-      font-size: 0.7rem;
+  .meta-info {
+    font-size: 0.7rem;
+    color: $font-color-light;
+  }
 
-      em {
-        font-style: italic;
-      }
+  .bottom-row {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+
+    em {
+      font-style: italic;
     }
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
   }
 }
