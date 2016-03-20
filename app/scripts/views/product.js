@@ -14,21 +14,15 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       _.bindAll(this, 'render');
       var _this = this;
 
-      this.collection = new LcboBackboneApp.Collections.Products({stupid: routeParams.id});
-
-      this.collection.fetch({
-        success: function (data, response) {
-          _this.render(response);
-        },
-
-        error: function(error) {
-          console.log('error : ', error);
-        }
-      });
+      this.collection = new LcboBackboneApp.Collections.Products();
+      this.collection.getById(routeParams.id);
+      this.listenTo(this.collection, 'reset', this.render);
     },
 
-    render: function (routeParams) {
-      this.$el.html(this.template(routeParams));
+    render: function (data) {
+      var product = data.toJSON();
+      console.log('product : ', product[0]);
+      this.$el.html(this.template({product: product[0]}));
     }
   });
 })();

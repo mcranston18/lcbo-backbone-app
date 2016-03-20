@@ -1,1 +1,9 @@
-<p>show single product</p>
+<h1> <%= product.name %> </h1>
+
+<% _.each(product, function (value, key) { %>
+<ul class="product">
+    <li>
+      <%= key %>: <%= value %>
+    </li>
+</ul>
+<% }); %>

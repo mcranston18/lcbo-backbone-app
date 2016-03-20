@@ -8,7 +8,30 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
 
   LcboBackboneApp.Collections.Products = Backbone.Collection.extend({
     model: LcboBackboneApp.Models.Product,
-    url: url
+    url: url,
+
+    getByName:function (name) {
+      var _this = this;
+      $.ajax({
+          url: url + '?q=' + name,
+          success:function (data) {
+            _this.reset(data.result);
+          }
+      });
+    },
+
+    getById:function (id) {
+      var _this = this;
+      $.ajax({
+          url: url + '/' + id,
+          success:function (data, response) {
+            _this.reset(data.result);
+          },
+          error:function (data) {
+            _this.reset(data);
+          },
+      });
+    }
   });
 
 })();
