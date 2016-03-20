@@ -1,4 +1,7 @@
-<h1> <%= product.name %> </h1>
+<ol class="breadcrumb">
+  <li><a href="#/products">Products</a></li>
+  <li><span><%= product.name %></span></li>
+</ol>
 
 <% _.each(product, function (value, key) { %>
 <ul class="product">
