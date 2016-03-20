@@ -18,7 +18,6 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
 
     render: function (data) {
       var product = data.toJSON();
-      console.log('product : ', product[0]);
       this.$el.html(this.template({product: product[0]}));
     }
   });

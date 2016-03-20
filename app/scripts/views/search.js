@@ -12,6 +12,16 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       this.render();
     },
 
+    events: {
+      'keydown input': 'onKeyDown'
+    },
+
+    onKeyDown: function(e) {
+      var search = $(e.currentTarget).val();
+      this.collection = new LcboBackboneApp.Collections.Products();
+      this.collection.getByName(search);
+    },
+
     render: function (data) {
       this.$el.html(this.template());
     }

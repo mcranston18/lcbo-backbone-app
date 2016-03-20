@@ -15,6 +15,9 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       this.collection = new LcboBackboneApp.Collections.Products();
       this.collection.fetch();
       this.listenTo(this.collection, 'sync', this.render);
+
+      // this never gets fired!!
+      this.listenTo(this.collection, 'reset', this.render);
     },
 
     render: function (data, products) {

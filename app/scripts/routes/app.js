@@ -20,7 +20,6 @@ LcboBackboneApp.Routers = LcboBackboneApp.Routers || {};
   appRouter.on('route:productsRoute', function(actions) {
     var searchView = new LcboBackboneApp.Views.Search();
     var productsView = new LcboBackboneApp.Views.Products();
-    // console.log('searchView : ', searchView);
     $("#search").html(searchView.el);
     $("#product").html(productsView.el);
   });

@@ -7,6 +7,8 @@ LcboBackboneApp.Models = LcboBackboneApp.Models || {};
   var url = 'https://lcboapi.com/products';
 
   LcboBackboneApp.Models.Search = Backbone.Model.extend({
-
+    defaults: {
+      placeholder: 'Search for a product'
+    }
   });
 })();

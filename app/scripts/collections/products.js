@@ -15,8 +15,12 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
       $.ajax({
           url: url + '?q=' + name,
           success:function (data) {
-            _this.reset(data.result);
-          }
+            _this.reset(null, data.result);
+            console.log('reset collection');
+          },
+          error:function (error) {
+            console.log('error : ', error)
+          },
       });
     },
 
