@@ -1,0 +1,9 @@
+{
+  "results": [
+    {"name": "red wine"},
+    {"name": "beer"},
+    {"name": "vodka"}
+  ],
+
+  "count": 3
+}

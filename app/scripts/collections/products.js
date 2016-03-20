@@ -6,9 +6,8 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
   'use strict';
 
   LcboBackboneApp.Collections.Products = Backbone.Collection.extend({
-
-    model: LcboBackboneApp.Models.Products
-
+    model: LcboBackboneApp.Models.Product,
+    url: '/dummy.json'
   });
 
 })();

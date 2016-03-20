@@ -27,7 +27,5 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       console.log('routeParams : ', routeParams);
       this.$el.html(this.template(routeParams));
     }
-
   });
-
 })();

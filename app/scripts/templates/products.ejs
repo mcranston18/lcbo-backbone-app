@@ -1,4 +1,8 @@
-<p>shows a products page</p>
-<p>shows a products page</p>
-<p>shows a products page</p>
-<p>shows a products page</p>
+<p>you are viewing products</p>
+
+
+  <% _.each(products.results, function (product) { %>
+  <div class="product">
+      <p><%= product.name %></p>
+  </div>
+  <% }); %>
