@@ -11,6 +11,12 @@ window.LcboBackboneApp = {
   }
 };
 
+Backbone.$.ajaxSetup({
+  headers: {
+    'Authorization': 'Token ' + ACCESS_KEY
+  }
+});
+
 $(document).ready(function () {
   'use strict';
   LcboBackboneApp.init();

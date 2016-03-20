@@ -4,7 +4,7 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
 
 (function () {
   'use strict';
-  var url = 'https://lcboapi.com/products?access_key=' + ACCESS_KEY
+  var url = 'https://lcboapi.com/products';
 
   LcboBackboneApp.Collections.Products = Backbone.Collection.extend({
     model: LcboBackboneApp.Models.Product,
