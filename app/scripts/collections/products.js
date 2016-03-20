@@ -15,6 +15,8 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
       $.ajax({
           url: url + '?q=' + name,
           success:function (data) {
+            // this success method gets called,
+            // but the reset isn't being listened by the view
             _this.reset(null, data.result);
             console.log('reset collection');
           },
