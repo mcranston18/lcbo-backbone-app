@@ -19,15 +19,14 @@ LcboBackboneApp.Routers = LcboBackboneApp.Routers || {};
 
   appRouter.on('route:productsRoute', function(actions) {
       console.log('route: products');
-
-      // console.log( 'LcboBackboneApp.Views.Products : ', LcboBackboneApp.Views.Products )
-
       var productsRoute = new LcboBackboneApp.Views.Products();
       $("#content").html(productsRoute.el);
   });
 
-  appRouter.on('route:productRoute', function(param) {
-      console.log('hello from single product!', param);
+  appRouter.on('route:productRoute', function(id) {
+      console.log('route: product ');
+      var productRoute = new LcboBackboneApp.Views.Product({id: id});
+      $("#content").html(productRoute.el);
   });
 
   appRouter.on('route:notFound', function(param) {

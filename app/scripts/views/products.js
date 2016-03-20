@@ -23,7 +23,6 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
     },
 
     render: function () {
-      console.log('render!!!');
       this.$el.html(this.template());
     }
 

@@ -17,12 +17,15 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
 
     events: {},
 
-    initialize: function () {
+    initialize: function (routeParams) {
+      console.log('view: product');
       this.listenTo(this.model, 'change', this.render);
+      this.render(routeParams);
     },
 
-    render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+    render: function (routeParams) {
+      console.log('routeParams : ', routeParams);
+      this.$el.html(this.template(routeParams));
     }
 
   });
