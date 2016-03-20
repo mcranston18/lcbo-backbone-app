@@ -11,9 +11,6 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
     events: {},
 
     initialize: function (routeParams) {
-      _.bindAll(this, 'render');
-      var _this = this;
-
       this.collection = new LcboBackboneApp.Collections.Products();
       this.collection.getById(routeParams.id);
       this.listenTo(this.collection, 'reset', this.render);

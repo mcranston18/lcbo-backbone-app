@@ -19,7 +19,6 @@ html, body {
 a {
   color: #333;
   border-bottom: 1px solid #eee;
-  font-size: $font-small;
 
   &:hover {
     text-decoration: none;
@@ -36,7 +35,7 @@ a {
 
 .lcbo-logo {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   img {
     width: 170px;
   }
@@ -86,7 +85,42 @@ a {
     }
   }
 
-  &:last-of-type {
+  &.no-border {
     border-bottom: 0;
+  }
+}
+
+#search {
+  border: 2px solid black;
+  position: relative;
+  max-width: 400px;
+  margin: 2rem auto;
+
+  input {
+    border-radius: 0;
+    border: 0;
+    text-transform: uppercase;
+    padding: 0.4rem;
+    width: 100%;
+    display: block;
+
+    &:focus {
+      border: none;
+      background: #fefefe;
+      outline-width: 0;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-left: 1px solid #666;
+    padding: 0 .5rem;
+    span {
+      margin-top: 8px;
+    }
+
   }
 }

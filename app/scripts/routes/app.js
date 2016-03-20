@@ -18,15 +18,16 @@ LcboBackboneApp.Routers = LcboBackboneApp.Routers || {};
   var appRouter = new LcboBackboneApp.Routers.App;
 
   appRouter.on('route:productsRoute', function(actions) {
-    console.log('route: products');
-    var productsRoute = new LcboBackboneApp.Views.Products();
-    $("#content").html(productsRoute.el);
+    var searchView = new LcboBackboneApp.Views.Search();
+    var productsView = new LcboBackboneApp.Views.Products();
+    // console.log('searchView : ', searchView);
+    $("#search").html(searchView.el);
+    $("#product").html(productsView.el);
   });
 
   appRouter.on('route:productRoute', function(id) {
-    console.log('route: product ');
     var productRoute = new LcboBackboneApp.Views.Product({id: id});
-    $("#content").html(productRoute.el);
+    $("#product").html(productRoute.el);
   });
 
   appRouter.on('route:notFound', function(param) {
