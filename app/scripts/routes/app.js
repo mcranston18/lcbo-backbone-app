@@ -18,8 +18,10 @@ LcboBackboneApp.Routers = LcboBackboneApp.Routers || {};
   var appRouter = new LcboBackboneApp.Routers.App;
 
   appRouter.on('route:productsRoute', function(actions) {
-    var searchView = new LcboBackboneApp.Views.Search();
-    var productsView = new LcboBackboneApp.Views.Products();
+    var collection = new LcboBackboneApp.Collections.Products();
+
+    var searchView = new LcboBackboneApp.Views.Search({collection: collection});
+    var productsView = new LcboBackboneApp.Views.Products({collection: collection});
     $("#search").html(searchView.el);
     $("#product").html(productsView.el);
   });

@@ -16,8 +16,8 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
       this.listenTo(this.collection, 'reset', this.render);
     },
 
-    render: function (data) {
-      var product = data.toJSON();
+    render: function () {
+      var product = this.collection.toJSON();
       this.$el.html(this.template({product: product[0]}));
     }
   });

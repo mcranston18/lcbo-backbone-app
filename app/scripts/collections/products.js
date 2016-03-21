@@ -10,30 +10,12 @@ LcboBackboneApp.Collections = LcboBackboneApp.Collections || {};
     model: LcboBackboneApp.Models.Product,
     url: url,
 
-    // fetch: function(options) {
-    //   options = options || {};
-    //   var data = options.data || {};
-    //   options.data = data;
-    //   this.reset = true;
+    fetch: function(options) {
+      options = options || {};
+      var data = options.data || {};
+      options.data = data;
 
-    //   console.log('re-fetching!!!!', this);
-
-    //   return Backbone.Collection.prototype.fetch.call(this, options);
-    // },
-
-    getByName:function (name) {
-      var _this = this;
-      $.ajax({
-          url: url + '?q=' + name,
-          success:function (data) {
-            // this success method gets called,
-            // but the reset isn't being listened by the view
-            _this.reset(data.result);
-          },
-          error:function (error) {
-            console.log('error : ', error)
-          },
-      });
+      return Backbone.Collection.prototype.fetch.call(this, options);
     },
 
     getById:function (id) {
