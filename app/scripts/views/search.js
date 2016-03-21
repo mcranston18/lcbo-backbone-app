@@ -19,7 +19,12 @@ LcboBackboneApp.Views = LcboBackboneApp.Views || {};
     onKeyDown: function(e) {
       var search = $(e.currentTarget).val();
       this.collection = new LcboBackboneApp.Collections.Products();
-      this.collection.getByName(search);
+      var options = {
+        data: {q: search}
+      };
+
+      this.collection.fetch(options);
+      // this.collection.getByName(search);
     },
 
     render: function (data) {
